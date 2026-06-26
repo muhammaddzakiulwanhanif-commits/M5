@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #2f3e4e, #4facfe);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2f3e4e;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background: #2f3e4e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background: #1e2a36;
+        }
+
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            padding: 8px;
+            background: #ccc;
+            border-radius: 5px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .back-btn:hover {
+            background: #999;
+        }
+
+        .register {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .register a {
+            color: #2f3e4e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        function validasiLogin() {
+            let fname = document.getElementById("fname").value;
+            let lname = document.getElementById("lname").value;
+
+            if (fname == "") {
+                alert("First name wajib diisi!");
+                return false;
+            }
+
+            if (lname == "") {
+                alert("Last name wajib diisi!");
+                return false;
+            }
+
+            alert("Login berhasil!");
+            return true;
+        }
+
+        function kembali() {
+            window.location.href = "../index.html";
+        }
+    </script>
+</head>
+
+<body>
+
+<div class="login-box">
+    <h1>Silahkan Masuk</h1>
+
+    <form onsubmit="return validasiLogin()">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname">
+
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname">
+
+        <input type="submit" value="Login">
+    </form>
+
+    <a href="../index.html" class="back-btn" onclick="kembali()">Kembali</a>
+
+    <div class="register">
+        Belum punya akun?
+        <a href="register.html">Register</a>
+    </div>
+</div>
+
+</body>
+</html>
